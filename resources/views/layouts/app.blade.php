@@ -8,8 +8,9 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -17,8 +18,8 @@
     <body class="bg-orange-900/20">
         @include("layouts.navigation")
 
-        <div class="mt-8 bg-green-100/80 mx-auto w-max p-6 border rounded border-solid border-green-700">
+        <main class="mt-8 bg-white mx-auto w-max p-6 border rounded border-solid border-green-700">
             {{ $slot }}
-        </div>
+        </main>
     </body>
 </html>

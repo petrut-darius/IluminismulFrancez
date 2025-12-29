@@ -3,7 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::view("/", "welcome")->name("home");
+Route::redirect("/", "home", 301);
+Route::view("/home", "welcome")->name("home");
 Route::view("/nuanta-generala", "nuanta_generala")->name("nuanta-generala");
 Route::view("/introducere", "introducere")->name("introducere");
 

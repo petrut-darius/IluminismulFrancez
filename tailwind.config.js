@@ -12,6 +12,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
+                serif: ['"EB Garamond', 'serif'],
+                heading: ['Marcellus', 'serif'],
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
         },

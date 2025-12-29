@@ -20,9 +20,9 @@
       <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
         @auth
         <div x-data="{open: false}" class="relative ml-3">
-            <button @click='open = !open' class="flex items-center rounded-full p-1 focus:outline-none focus:ring-2 focus:ring-green-500 ">
+            <x-nav-link @click='open = !open' class="cursor-pointer" :active="Route::currentRouteName() == 'profile.edit'">
                 User menu
-            </button>
+            </x-nav-link>
 
             <div x-show="open"
                 @click.away="open = false"
