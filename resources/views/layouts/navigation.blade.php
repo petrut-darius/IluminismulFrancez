@@ -6,14 +6,24 @@
       </div>
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
         <div class="flex shrink-0 items-center text-green-500">
-          PDI
+          thepdi
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
             <x-nav-link :href="route('home')" :active='Route::currentRouteName() == "home"'>Home</x-nav-link>
             <x-nav-link :href="route('introducere')" :active="Route::currentRouteName() == 'introducere'">Introducere</x-nav-link>
-            <x-nav-link :href="route('nuanta-generala')" :active='Route::currentRouteName() == "nuanta-generala"'>Nuanta Generala</x-nav-link>
-          </div>
+            <x-nav-link :href="route('nuanta_generala')" :active='Route::currentRouteName() == "nuanta_generala"'>Nuanta Generala</x-nav-link>
+
+            <x-nav-link :href="route('caracteristicile_generale')" :active='Route::currentRouteName() == "caracteristicile_generale"'>Caracteristicile Generale</x-nav-link>
+            <x-nav-link :href="route('context_motivatie')" :active='Route::currentRouteName() == "context_motivatie"'>Context & Motivatie</x-nav-link>
+            <x-nav-link :href="route('filosofi_reprezentativi')" :active='Route::currentRouteName() == "filosofi_reprezentativi"'>Filosofii reprezentativi</x-nav-link>
+            <x-nav-link :href="route('impact')" :active='Route::currentRouteName() == "impact"'>Impact</x-nav-link>
+
+            @auth
+                <x-nav-link :href="route('impact')" :active='Route::currentRouteName() == "impact"' class="!text-red-700">Teste</x-nav-link>
+            @endauth
+
+        </div>
         </div>
       </div>
 
@@ -53,10 +63,18 @@
   <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
     <div class="space-y-1 px-2 pt-2 pb-3">
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-      <a href="#" aria-current="page" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white">Dashboard</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Team</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Calendar</a>
+        <x-nav-link-minimized :href="route('home')" :active='Route::currentRouteName() == "home"'>Home</x-nav-link-minimized>
+        <x-nav-link-minimized :href="route('introducere')" :active="Route::currentRouteName() == 'introducere'">Introducere</x-nav-link-minimized>
+        <x-nav-link-minimized :href="route('nuanta_generala')" :active='Route::currentRouteName() == "nuanta_generala"'>Nuanta Generala</x-nav-link-minimized>
+
+        <x-nav-link-minimized :href="route('caracteristicile_generale')" :active='Route::currentRouteName() == "caracteristicile_generale"'>Caracteristicile Generale</x-nav-link-minimized>
+        <x-nav-link-minimized :href="route('context_motivatie')" :active='Route::currentRouteName() == "context_motivatie"'>Context & Motivatie</x-nav-link-minimized>
+        <x-nav-link-minimized :href="route('filosofi_reprezentativi')" :active='Route::currentRouteName() == "filosofi_reprezentativi"'>Filosofii reprezentativi</x-nav-link-minimized>
+        <x-nav-link-minimized :href="route('impact')" :active='Route::currentRouteName() == "impact"'>Impact</x-nav-link-minimized>
+
+        @auth
+            <x-nav-link-minimized :href="route('impact')" :active='Route::currentRouteName() == "impact"' class="!text-red-700">Teste</x-nav-link-minimized>
+        @endauth
     </div>
   </el-disclosure>
 </nav>

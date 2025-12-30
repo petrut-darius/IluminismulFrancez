@@ -15,8 +15,19 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="bg-orange-900/20">
+    <body class="bg-orange-900/20 my-4">
+        <h1 class="text-5xl text-center mt-4 mb-2">Iluminismul Francez</h1>
+
         @include("layouts.navigation")
+
+        <div class="w-[70vw] mt-8 mx-auto">
+            @if(auth()->user() instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && !auth()->user()->hasVerifiedEmail())
+                <p>
+                    {{ __('Your email address is unverified.') }}
+                    <a href="{{ route("profile.edit") }}" class="text-green-800 hover:text-green-500 ">more info...</a>
+                </p>
+            @endif
+        </div>
 
         <main class="mt-8 bg-white mx-auto w-max p-6 border rounded border-solid border-green-700">
             {{ $slot }}
